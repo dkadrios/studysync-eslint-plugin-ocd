@@ -24,7 +24,7 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
       ],
       output: 'import Ember from "ember"\n' +
               'const {Component, Logger} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -51,7 +51,7 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
               '  Component,\n' +
               '  Logger\n' +
               '} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -72,7 +72,7 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
       ],
       output: 'import Ember from "ember"\n' +
               'const {A, Component, Logger} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -101,7 +101,7 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
               '  Component,\n' +
               '  Logger\n' +
               '} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -122,7 +122,7 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
       ],
       output: 'import Ember from "ember"\n' +
               'const {Component, Logger, set} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -151,36 +151,36 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
               '  Logger,\n' +
               '  set\n' +
               '} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     }
   ],
   valid: [
     {
       code: 'import Ember from "ember"\n' +
             'const {Component} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
             'const {Component, Logger} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
             'const {A, Component, Logger} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
             'const {A, Component, Logger, set} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
             'const {\n' +
             '  Component\n' +
             '} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -188,7 +188,7 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
             '  Component,\n' +
             '  Logger\n' +
             '} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -197,7 +197,7 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
             '  Component,\n' +
             '  Logger\n' +
             '} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"\n' +
@@ -207,21 +207,21 @@ ruleTester.run('sort-variable-declarator-properties', rule, {
             '  Logger,\n' +
             '  set\n' +
             '} = Ember',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'const a = [1, 2]\n' +
             'const [b, c] = a',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'const a = [1, 2]\n' +
             'const [c, b] = a',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'const {bar, baz, ...rest} = foo',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 2018, sourceType: 'module' },
     }
   ]
 })

@@ -22,7 +22,7 @@ ruleTester.run('sort-import-declaration-specifiers', rule, {
         }
       ],
       output: 'import {describe, it} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {describe, beforeEach, it} from "mocha"',
@@ -41,38 +41,38 @@ ruleTester.run('sort-import-declaration-specifiers', rule, {
         }
       ],
       output: 'import {beforeEach, describe, it} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     }
   ],
   valid: [
     {
       code: 'import {it} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {describe, it} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {beforeEach, describe, it} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {afterEach, beforeEach, describe, it} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {\n' +
             '  it\n' +
             '} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {\n' +
             '  describe,\n' +
             '  it\n' +
             '} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {\n' +
@@ -80,7 +80,7 @@ ruleTester.run('sort-import-declaration-specifiers', rule, {
             '  describe,\n' +
             '  it\n' +
             '} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {\n' +
@@ -89,11 +89,11 @@ ruleTester.run('sort-import-declaration-specifiers', rule, {
             '  describe,\n' +
             '  it\n' +
             '} from "mocha"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Ember from "ember"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     }
   ]
 })

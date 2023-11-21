@@ -1,4 +1,4 @@
-var RuleTester = require('eslint').RuleTester
+const RuleTester = require('eslint/lib/testers/rule-tester.js')
 var rule = require('../rules/sort-import-declarations')
 
 var ruleTester = new RuleTester()
@@ -24,7 +24,7 @@ ruleTester.run('sort-import-declarations', rule, {
       ],
       output: 'import Bar from "bar"\n' +
               'import Baz from "baz"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Foo from "foo"\n' +
@@ -53,7 +53,7 @@ ruleTester.run('sort-import-declarations', rule, {
       output: 'import Bar from "bar"\n' +
               'import Baz from "baz"\n' +
               'import Foo from "foo"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Bar from "bar"\n' +
@@ -76,7 +76,7 @@ ruleTester.run('sort-import-declarations', rule, {
       output: 'import Bar from "bar"\n' +
               'import Baz from "baz"\n' +
               'import Foo from "foo"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Foo from "foo"\n' +
@@ -99,7 +99,7 @@ ruleTester.run('sort-import-declarations', rule, {
       output: 'import Bar from "bar"\n' +
               'import Baz from "baz"\n' +
               'import Foo from "foo"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Baz from "baz"\n' +
@@ -122,7 +122,7 @@ ruleTester.run('sort-import-declarations', rule, {
       output: 'import Bar from "bar"\n' +
               'import Baz from "baz"\n' +
               'import Foo from "foo"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import A from "baz"\n' +
@@ -143,7 +143,7 @@ ruleTester.run('sort-import-declarations', rule, {
       ],
       output: 'import B from "bar"\n' +
               'import A from "baz"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import A from "baz"\n' +
@@ -166,35 +166,35 @@ ruleTester.run('sort-import-declarations', rule, {
       output: 'import B from "bar"\n' +
               'import A from "baz"\n' +
               'import C from "foo"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     }
   ],
   valid: [
     {
       code: 'import Bar from "bar"\n',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Bar from "bar"\n' +
             'import Baz from "baz"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import Bar from "bar"\n' +
             'import Baz from "baz"\n' +
             'import Foo from "foo"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import B from "bar"\n' +
             'import A from "baz"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import C from "bar"\n' +
             'import A from "baz"\n' +
             'import B from "foo"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import {expect} from "chai"\n' +
@@ -208,7 +208,7 @@ ruleTester.run('sort-import-declarations', rule, {
             'import hbs from "htmlbars-inline-precompile"\n' +
             'import {afterEach, beforeEach, describe} from "mocha"\n' +
             'import sinon from "sinon"',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import foo from "foo"\n' +
@@ -220,11 +220,11 @@ ruleTester.run('sort-import-declarations', rule, {
           localPrefixes: ['../', './', 'dummy/']
         }
       ],
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'export default {}',
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     {
       code: 'import "polyfills"\n' +
@@ -234,7 +234,7 @@ ruleTester.run('sort-import-declarations', rule, {
           ignore: ['polyfills']
         }
       ],
-      parser: 'babel-eslint'
+      parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true }, sourceType: 'module' },
     }
   ]
 })
